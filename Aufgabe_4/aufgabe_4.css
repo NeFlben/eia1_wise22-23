@@ -13,11 +13,11 @@ font-family: Arial, Helvetica, sans-serif;
 a{margin-right: 16px;}
 #header {
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-background-image: url(Bild.jpg);
-height: 400px;
+background-image: url(Adobe_20220917_135355.jpg);
+height: 800px;
 padding: 0%;
 background-repeat: no-repeat;
-background-size: 1500px 1000px;
+background-size: 3050px 1000px;
 background-attachment: fixed;
 width:100%;
 left:0px;
@@ -51,7 +51,7 @@ li {
 
         display: block;
     
-        color: black;
+        color: rgb(183, 4, 4);
     
         text-align: right;
     
@@ -60,6 +60,8 @@ li {
         padding: 8px;
     
         text-decoration: none;
+
+        font-size: 50pt;
     
        
     
@@ -71,7 +73,7 @@ li {
 footer {font-size: 25px}
 h1{font-family: Arial, Helvetica, sans-serif;}
 
-.titel {font-size:50pt;}
+.titel {font-size:50pt;margin-top: 650px;}
 
 * {
     box-sizing: border-box;
@@ -158,3 +160,5 @@ width: 680px;
     display: inline-block;
     font-size: 12pt;
     margin: 0 auto;}
+
+.link {margin-right: 90%;}
