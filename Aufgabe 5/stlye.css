@@ -1,0 +1,191 @@
+header {
+    height: 400px;
+    width: auto;
+    background-attachment: fixed;
+    top: 0px;
+    display: flex;
+
+    -webkit-animation: slide 18s ease infinite;
+    animation: slide 18s ease infinite;
+}
+
+.icon {
+    width: 30px;
+    opacity: 0.5;
+}
+
+.icon:hover {
+    opacity: 1;
+    transform: scale(1.2);
+
+}
+
+#stoerer {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+    width: 300px;
+}
+
+main {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 1500px;
+}
+
+.container {
+
+    width: 800px;
+    margin: auto;
+    display: block;
+}
+
+li {
+    animation-duration: 3s;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(0, 0, 0);
+    margin: 0;
+}
+
+#navi {
+    text-align: right;
+    position: absolute;
+    width: 100%;
+    top: 1px;
+    right: 400px;
+}
+
+#logo {
+    position: sticky;
+    top: 5px;
+    left: 100px;
+    width: 300px;
+    height: 300px;
+}
+
+#navi li {
+    display: inline;
+}
+
+#navi a:link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 15pt;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#navi a:visited {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 15pt;
+}
+
+#navi a:hover {
+    text-decoration: underline;
+    color: rgb(255, 255, 255);
+}
+
+footer {
+    background-color: #eaeaea;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    position: static;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    height: 150px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    position: relative;
+    top: 20px;
+}
+
+.textarea {
+
+    font-size: 10;
+    color: rgb(0, 0, 0);
+    width: 800px;
+}
+
+.zoom:hover img {
+    opacity: 0.5;
+}
+
+img:hover {
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out 0s;
+    opacity: 1 !important;
+}
+
+@keyframes slide {
+    0% {
+        background-image: url(bikes.forma.jpg);
+    }
+
+    10% {
+        background-image: url(bikes.forma.jpg);
+    }
+
+    20% {
+        background-image: url(plane_edited.jpg);
+    }
+
+    50% {
+        background-image: url(plane_edited.jpg);
+    }
+
+    60% {
+        background-image: url(truck_edited.jpg);
+    }
+
+    90% {
+        background-image: url(truck_edited.jpg);
+    }
+
+    100% {
+        background-image: url(bikes.forma.jpg);
+    }
+
+}
+
+@-webkit-keyframes slide {
+    0% {
+        background-image: url(bikes.forma.jpg);
+    }
+
+    10% {
+        background-image: url(bikes.forma.jpg);
+    }
+
+    20% {
+        background-image: url(plane_edited.jpg);
+    }
+
+    50% {
+        background-image: url(plane_edited.jpg);
+    }
+
+    60% {
+        background-image: url(truck_edited.jpg);
+    }
+
+    90% {
+        background-image: url(truck_edited.jpg);
+    }
+
+    100% {
+        background-image: url(bikes.forma.jpg);
+    }
+
+}
+#banner{height: 105px;width: 105px;margin-left: 50%; margin-top: 50%;}
