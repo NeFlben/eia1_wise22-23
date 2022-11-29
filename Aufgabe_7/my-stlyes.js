@@ -1,38 +1,104 @@
-const countries = ["Deutschland", "Frankreich", "Italien", "Kroatien"];
-const population_eu = [501.11, 751.22];
-const eu = ["Die Bevölkerung der gesamten EU betrug 2010: " + population_eu[0] + " Millionen. Seit 2022 leben in der Europäischen Union " + population_eu[1] + " Millionen Menschen"];
-console.log(eu);
-const population_ger = [81.78, 84.10];
-const germany = ["Die Bevölkerung in Deutschland betrug 2010: " + population_ger[0] + " Millionen. Bis 2022 ist die Bevölkerung auf: " + population_ger[1] + " Millionen gestiegen"];
-console.log(germany);
-const population_fra = [65.03, 66.05];
-const france = ["Die Bevölkerung in Frankreich betrug 2010: " + population_fra[0] + " Millionen. Bis 2022 ist die Bevölkerung auf: " + population_fra[1] + " Millionen gestiegen"];
-console.log(france);
-const population_ita = [59.28, 60.63];
-const italy = ["Die Bevölkerung in Italien betrug 2010: " + population_ita[0] + " Millionen. Bis 2022 ist die Bevölkerung auf: " + population_ita[1] + " Millionen gestiegen"];
-console.log(italy);
-const population_cro = [4.30, 4.08];
-const croatia = ["Die Bevölkerung in Kroatien betrug 2010: " + population_cro[0] + " Millionen. Bis 2022 ist die Bevölkerung auf: " + population_cro[1] + " Millionen gesunken"];
-console.log(croatia);
-const population_cou = [population_ger, population_fra, population_ita, population_cro];
-for (let i = 0; i < 4; i++) {
-    const j = 0;
-    const percentage = ((100 / population_cou[i][j]) * population_cou[i][j + 1]) - 100;
-    console.log("Die prozentuale Veränderung von " + countries[i] + " ist: " + parseFloat(percentage.toString()).toFixed(2) + "%");
+//Einwohnerzahl Länder//
+const Europa22 = 447.7;
+const Europa12 = 440.55;
+const Deutschland22 = 83.75;
+const Deutschland12 = 80.84;
+const Frankreich22 = 65.79;
+const Frankreich12 = 63.73;
+const Italien22 = 60.59;
+const Italien12 = 59.73;
+const Kroatien22 = 4.08;
+const Kroatien12 = 4.30;
+const Text1 = "Gesamtzahl Einwohnerinnen und Einwohner in";
+const Text2 = "in 2022";
+//Relativität Gesamtzahl zu EU//
+const RelativDEzuEU = Math.abs((Deutschland22 / Europa22) * 100).toFixed(2);
+const RelativFRzuEU = Math.abs((Frankreich22 / Europa22) * 100).toFixed(2);
+const RelativITzuEU = Math.abs((Italien22 / Europa22) * 100).toFixed(2);
+const RelativKRzuEU = Math.abs((Kroatien22 / Europa22) * 100).toFixed(2);
+//Differenz der Länder//
+const DifferenzDE = Math.abs(Deutschland22 - Deutschland12).toFixed(2);
+const DifferenzFR = Math.abs(Frankreich22 - Frankreich12).toFixed(2);
+const DifferenzIT = Math.abs(Italien22 - Italien12).toFixed(2);
+const DifferenzKR = Math.abs(Kroatien22 - Kroatien12).toFixed(2);
+const DifferenzEU = Math.abs(Europa22 - Europa12).toFixed(2);
+//Wachstumsrate seit 2012//
+const WachstumsrateDE12 = Math.abs((DifferenzDE / Deutschland22) * 100).toFixed(2);
+const WachstumsrateFR12 = Math.abs((DifferenzFR / Frankreich22) * 100).toFixed(2);
+const WachstumsrateIT12 = Math.abs((DifferenzIT / Italien22) * 100).toFixed(2);
+const WachstumsrateKR12 = Math.abs((DifferenzKR / Kroatien22) * 100).toFixed(2);
+const WachstumsrateEU12 = Math.abs((DifferenzEU / Europa22) * 100).toFixed(2);
+//Funktionen//
+function Europa() {
+    document.getElementById("gesamt").innerHTML = Europa22 + " Mio";
+    document.getElementById("relativ").innerHTML = "100%";
+    document.getElementById("wachstumsrate").innerHTML = WachstumsrateEU12 + "%";
+    document.getElementById("wachstumsrategesamt").innerHTML = DifferenzEU + " Mio";
+    document.getElementById("Name").innerHTML = Text1 + " Europa " + Text2; // Bezeichnung der Länder ändert sich
+    document.querySelector(".chart").setAttribute("style", "height:" + "100%");
+    document.querySelector(".stars").setAttribute("style", "opacity: " + "1"); //EuropaSterne
+    document.querySelector("#dt").setAttribute("class", "wrapper"); //Zusatzaufgabe
+    document.querySelector("#fr").setAttribute("class", "wrapper");
+    document.querySelector("#it").setAttribute("class", "wrapper");
+    document.querySelector("#cr").setAttribute("class", "wrapper");
 }
-const growth_eu = [population_eu];
-for (let m = 0; m < 1; m++) {
-    const growth = (population_eu[m + 1] / population_eu[m] * 100) - 100;
-    console.log("Die Europäische Union hatte von 2010 zu 2022 einen Bevölkerungszuwachs von " + parseFloat(growth.toString()).toFixed(2) + "%");
+window.addEventListener("load", function () {
+    document.querySelector(".chartStarWrapper").addEventListener('click', Europa);
+    document.querySelector(".germany").addEventListener('click', Deutschland);
+    document.querySelector(".france").addEventListener('click', Frankreich);
+    document.querySelector(".italy").addEventListener('click', Italien);
+    document.querySelector(".croatia").addEventListener('click', Kroatien);
+});
+function Deutschland() {
+    document.getElementById("gesamt").innerHTML = Deutschland22 + " Mio";
+    document.getElementById("relativ").innerHTML = RelativDEzuEU + "%";
+    document.getElementById("wachstumsrate").innerHTML = WachstumsrateDE12 + "%";
+    document.getElementById("wachstumsrategesamt").innerHTML = DifferenzDE + " Mio";
+    document.getElementById("Name").innerHTML = Text1 + " Deutschland " + Text2; // Bezeichnung der Länder ändert sich
+    document.querySelector(".chart").setAttribute("style", "height:" + (Deutschland22 / Europa22 * 100) + "%");
+    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5"); //EuropaSterne
+    document.querySelector("#dt").setAttribute("class", "active"); //Zusatzaufgabe
+    document.querySelector("#fr").setAttribute("class", "wrapper");
+    document.querySelector("#it").setAttribute("class", "wrapper");
+    document.querySelector("#cr").setAttribute("class", "wrapper");
 }
-const proportion_eu = [population_cou];
-for (let i = 0; i < 4; i++) {
-    const k = 0;
-    const l = 0;
-    const proportion = population_cou[i][l] / population_eu[k] * 100;
-    const proportional = population_cou[i][l + 1] / population_eu[k + 1] * 100;
-    console.log(countries[i] + " hatte 2010 einen Einwohneranteil an der Europäischen Union, von " + parseFloat(proportion.toString()).toFixed(2) + "%");
-    console.log(countries[i] + " hat 2022 einen Einwohneranteil an der Europäischen Union, von " + parseFloat(proportional.toString()).toFixed(2) + "%");
+function Frankreich() {
+    document.getElementById("gesamt").innerHTML = Frankreich22 + " Mio";
+    document.getElementById("relativ").innerHTML = RelativFRzuEU + "%";
+    document.getElementById("wachstumsrate").innerHTML = WachstumsrateFR12 + "%";
+    document.getElementById("wachstumsrategesamt").innerHTML = DifferenzFR + " Mio";
+    document.getElementById("Name").innerHTML = Text1 + " Frankreich " + Text2; // Bezeichnung der Länder ändert sich
+    document.querySelector(".chart").setAttribute("style", "height:" + (Frankreich22 / Europa22 * 100) + "%");
+    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5"); //EuropaSterne
+    document.querySelector("#dt").setAttribute("class", "wrapper"); //Zusatzaufgabe
+    document.querySelector("#fr").setAttribute("class", "active");
+    document.querySelector("#it").setAttribute("class", "wrapper");
+    document.querySelector("#cr").setAttribute("class", "wrapper");
 }
-//# sourceMappingURL=my-styles.js.map
-//# sourceMappingURL=my-stlyes.js.map
+function Italien() {
+    document.getElementById("gesamt").innerHTML = Italien22 + " Mio";
+    document.getElementById("relativ").innerHTML = RelativITzuEU + "%";
+    document.getElementById("wachstumsrate").innerHTML = WachstumsrateIT12 + "%";
+    document.getElementById("wachstumsrategesamt").innerHTML = DifferenzIT + " Mio";
+    document.getElementById("Name").innerHTML = Text1 + " Italien " + Text2; // Bezeichnung der Länder ändert sich
+    document.querySelector(".chart").setAttribute("style", "height:" + (Italien22 / Europa22 * 100) + "%");
+    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5"); //EuropaSterne
+    document.querySelector("#dt").setAttribute("class", "wrapper"); //Zusatzaufgabe
+    document.querySelector("#fr").setAttribute("class", "wrapper");
+    document.querySelector("#it").setAttribute("class", "active");
+    document.querySelector("#cr").setAttribute("class", "wrapper");
+}
+function Kroatien() {
+    document.getElementById("gesamt").innerHTML = Kroatien22 + " Mio";
+    document.getElementById("relativ").innerHTML = RelativKRzuEU + "%";
+    document.getElementById("wachstumsrate").innerHTML = WachstumsrateKR12 + "%";
+    document.getElementById("wachstumsrategesamt").innerHTML = DifferenzKR + " Mio";
+    document.getElementById("Name").innerHTML = Text1 + " Kroatien " + Text2; // Bezeichnung der Länder ändert sich
+    document.querySelector(".chart").setAttribute("style", "height:" + (Kroatien22 / Europa22 * 100) + "%");
+    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5"); //EuropaSterne
+    document.querySelector("#dt").setAttribute("class", "wrapper"); //Zusatzaufgabe
+    document.querySelector("#fr").setAttribute("class", "wrapper");
+    document.querySelector("#it").setAttribute("class", "wrapper");
+    document.querySelector("#cr").setAttribute("class", "active");
+}
+//# sourceMappingURL=a7.js.map
