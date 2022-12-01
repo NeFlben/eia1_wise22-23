@@ -148,5 +148,3 @@ function Kroatien() {
     document.querySelector("#it").setAttribute("class", "wrapper");
     document.querySelector("#cr").setAttribute("class", "active");
 }
-
-//# sourceMappingURL=my-styles.js.map
